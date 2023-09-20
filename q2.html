@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 2>
+    <meta Question="Develop JavaScript to implement the switch-case statement for the given problem?">
+    <title>Season and Month</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: larger;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            
+        }
+        #output {
+            font-size: larger;
+            margin-top: 10px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        h1 {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        button {
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Season and Month</h1>
+    <button onclick="displaySeasonAndMonth()">Show Season and Month</button>
+    <div id="output"></div>
+
+    <script>
+        function displaySeasonAndMonth() {
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            const userInput = prompt("Enter a month number (1-12):");
+            const monthNumber = parseInt(userInput, 10);
+            const outputElement = document.getElementById("output");
+
+            if (!isNaN(monthNumber) && monthNumber >= 1 && monthNumber <= 12) {
+                let season, monthName, backgroundImage;
+
+                switch (monthNumber) {
+                    case 1:
+                    case 2:
+                    case 12:
+                        season = "Winter";
+                        backgroundImage = "images/winter.jpg";
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        season = "Spring";
+                        backgroundImage = "images/spring.jpg";
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                        season = "Summer";
+                        backgroundImage = "images/summer.jpg";
+                        break;
+                    case 9:
+                    case 10:
+                    case 11:
+                        season = "Autumn";
+                        backgroundImage = "images/autumn.jpeg";
+                        break;
+                }
+
+                monthName = months[monthNumber - 1];
+                document.body.style.backgroundImage = `url('${backgroundImage}')`;
+                alert(`It's ${season} in ${monthName}.`);
+                outputElement.textContent =  `It's ${season} in ${monthName}.`;
+            } else {
+                document.body.style.backgroundImage = `url('images/error.jpg')`;
+                alert("Invalid month number. Please enter a number between 1 and 12.");
+                outputElement.textContent =  `Invalid month number. Please enter a number between 1 and 12.`;
+            }
+        }
+    </script>
+</body>
+</html>
