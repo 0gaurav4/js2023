@@ -45,7 +45,7 @@
             ];
 
             const userInput = prompt("Enter a month number (1-12):");
-            const monthNumber = parseInt(userInput, 10);
+            const monthNumber = parseInt(userInput);
             const outputElement = document.getElementById("output");
 
             if (!isNaN(monthNumber) && monthNumber >= 1 && monthNumber <= 12) {
