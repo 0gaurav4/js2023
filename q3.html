@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 3>
+    <meta Question="Develop JavaScript to implement loop for solving the given iterative problem?">
+    <title>Factorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Factorial Calculator</h1>
+        <p>Enter a non-negative integer to calculate its factorial:</p>
+        <input type="number" id="numberInput" placeholder="Enter a number" min="0" step="1">
+        <button onclick="calculateFactorial()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateFactorial() {
+            const numberInput = document.getElementById("numberInput");
+            const resultDiv = document.getElementById("result");
+            
+            const n = parseInt(numberInput.value);
+
+            if (isNaN(n) || n < 0) {
+                resultDiv.innerHTML = "Please enter a non-negative integer.";
+            } else {
+                let factorial = 1;
+                for (let i = 2; i <= n; i++) {
+                    factorial *= i;
+                }
+                resultDiv.innerHTML = `The factorial of ${n} is ${factorial}`;
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 5>
+    <meta Question="Perform the specified string manipulation operation on the given String(s)?">
+    <title>String Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>String Manipulation</h1>
+        <form onsubmit="performStringOperation(event)">
+            <label for="inputString">Enter a string:</label>
+            <input type="text" id="inputString" placeholder="Enter a string" required>
+            <button type="submit">Perform Operations</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function performStringOperation(event) {
+            event.preventDefault(); // Prevent the form from submitting normally.
+
+            const inputString = document.getElementById("inputString").value;
+            const resultDiv = document.getElementById("result");
+
+            // Perform the string manipulation operations (reverse and palindrome check).
+            const reversedString = inputString.split("").reverse().join("");
+            const isPalindrome = inputString === reversedString;
+
+            let resultMessage = `Reversed String: ${reversedString}<br>`;
+            if (isPalindrome) {
+                resultMessage += "This is a Palindrome!";
+            } else {
+                resultMessage += "This is not a Palindrome.";
+            }
+            
+            resultDiv.innerHTML = resultMessage;
+        }
+    </script>
+
+    </body>
+    </html>
+

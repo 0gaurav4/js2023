@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .plan {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a Plan</h1>
+        <div class="plan">
+            <h2>Basic Plan - $1</h2>
+            <p>JavaScript Sessional - 1 PDF</p>
+            <button onclick="purchase('Basic')">Buy Now</button>
+        </div>
+        <div class="plan">
+            <h2>Pro Plan - $2</h2>
+            <p>JavaScript Sessional - 1 Word File</p>
+            <button onclick="purchase('Pro')">Buy Now</button>
+        </div>
+        <div class="plan">
+            <h2>Premium Plan - $5</h2>
+            <p>Customize Word File and PDF</p>
+            <button onclick="purchase('Premium')">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function purchase(plan) {
+            // You can implement payment processing logic here
+            // For demonstration, we'll show an alert with the selected plan
+            alert(`You have selected the ${plan} plan. Payment processing is not implemented in this example.`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 7>
+    <meta Question="Use JavaScript to implement form events to solve the given problem?">
+    <title>JavaScript Event</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    button#refreshButton {
+        background-color: #3498db;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+    button#refreshButton:hover {
+        background-color: #2980b9;
+    }
+    button#changeTextButton {
+        background-color: #2ecc71;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+    button#changeTextButton:hover {
+        background-color: #27ae60;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Click the buttons:</h1>
+    <button id="changeTextButton">Change Text</button>
+    <button id="refreshButton">Refresh Page</button>
+    <p id="displayText">This is some initial text.</p>
+</div>
+
+<script>
+    const changeTextButton = document.getElementById("changeTextButton");
+    const refreshButton = document.getElementById("refreshButton");
+    const displayText = document.getElementById("displayText");
+
+    function changeText() {
+        displayText.textContent = "The text was changed!";
+    }
+
+    function refreshPage() {
+        // Add a CSS animation class to the button.
+        refreshButton.classList.add("rotate");
+
+        // Use a timeout to remove the animation class after a short delay.
+        setTimeout(() => {
+            refreshButton.classList.remove("rotate");
+            location.reload(); // Reload the page.
+        }, 1000); // 1000 milliseconds (1 second)
+    }
+
+    changeTextButton.addEventListener("click", changeText);
+    refreshButton.addEventListener("click", refreshPage);
+</script>
+</body>
+</html>
+
+
+
+
+

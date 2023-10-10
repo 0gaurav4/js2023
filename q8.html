@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 8>
+    <meta Question="Develop JavaScript to dynamically assign specified attribute value to the given form control?">
+    <title>Dynamically Assign Attribute Value</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+        color: #333;
+    }
+    p {
+        color: #777;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #2980b9;
+    }
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Dynamic Attribute Assignment</h1>
+    <p>Click the button to enable/disable the input field:</p>
+    <button id="toggleButton">Toggle Disabled</button>
+    <input type="text" id="inputField" placeholder="Enter text" disabled>
+</div>
+
+<script>
+    const toggleButton = document.getElementById("toggleButton");
+    const inputField = document.getElementById("inputField");
+
+    toggleButton.addEventListener("click", function() {
+        // Check if the input field is currently disabled
+        const isDisabled = inputField.disabled;
+
+        // Toggle the disabled attribute value
+        inputField.disabled = !isDisabled;
+    });
+</script>
+</body>
+</html>

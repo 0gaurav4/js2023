@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username: Gaurav Tiwari, Roll_no: 19, University Roll_no: 1220259020, Ques_num: 9>
+    <meta Question="Create cookies based on the given problem?">
+    <title>Dynamically Set Cookie Value</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #777;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamically Set Cookie Value</h1>
+        <input type="text" id="cookieValue" placeholder="Enter cookie value">
+        <button onclick="setCookie()">Set Cookie</button>
+        <button onclick="getCookie()">Get Cookie</button>
+        <button onclick="deleteCookie()">Delete Cookie</button>
+        <div id="cookieStatus"></div>
+    </div>
+
+    <script>
+        function setCookie() {
+            const cookieName = "user_input_cookie";
+            const cookieValue = document.getElementById("cookieValue").value;
+            const expirationDays = 7;
+
+            // Calculate the expiration date
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + expirationDays);
+
+            // Create the cookie string
+            const cookieString = `${cookieName}=${cookieValue}; expires=${expirationDate.toUTCString()}; path=/`;
+
+            // Set the cookie
+            document.cookie = cookieString;
+
+            // Display a message
+            const cookieStatus = document.getElementById("cookieStatus");
+            cookieStatus.innerHTML = `Cookie "${cookieName}" set with value "${cookieValue}"`;
+        }
+
+        function getCookie() {
+            const cookieName = "user_input_cookie";
+
+            // Split the cookies into an array
+            const cookies = document.cookie.split(";");
+
+            // Search for the desired cookie
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith(cookieName + "=")) {
+                    const cookieValue = cookie.substring(cookieName.length + 1);
+                    const cookieStatus = document.getElementById("cookieStatus");
+                    cookieStatus.innerHTML = `Value of "${cookieName}" cookie: "${cookieValue}"`;
+                    return;
+                }
+            }
+
+            const cookieStatus = document.getElementById("cookieStatus");
+            cookieStatus.innerHTML = `Cookie "${cookieName}" not found.`;
+        }
+
+        function deleteCookie() {
+            const cookieName = "user_input_cookie";
+
+            // Expire the cookie by setting its expiration date to the past
+            const expiredDate = new Date(0).toUTCString();
+
+            // Create the cookie string to delete it
+            const deleteCookieString = `${cookieName}=; expires=${expiredDate}; path=/`;
+
+            // Set the cookie to delete it
+            document.cookie = deleteCookieString;
+
+            const cookieStatus = document.getElementById("cookieStatus");
+            cookieStatus.innerHTML = `Cookie "${cookieName}" deleted.`;
+        }
+    </script>
+</body>
+</html>
