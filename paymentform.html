@@ -27,29 +27,45 @@
 </head>
 <body>
     <div class="container">
+                <div class="container">
         <h1>Choose a Plan</h1>
         <div class="plan">
             <h2>Basic Plan - $1</h2>
             <p>JavaScript Sessional - 1 PDF</p>
-            <button onclick="purchase('Basic')">Buy Now</button>
+            <!-- Razorpay Payment Button -->
+            <form>
+                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                        data-payment_button_id="pl_MmYKSR6zjG6DRd"
+                        async>
+                </script>
+            </form>
         </div>
+        <!-- Add other plans as needed -->
+    </div>
+    <div class="container">
+        <h1>Choose a Plan</h1>
         <div class="plan">
             <h2>Pro Plan - $2</h2>
             <p>JavaScript Sessional - 1 Word File</p>
-            <button onclick="purchase('Pro')">Buy Now</button>
+            <!-- Razorpay Payment Button -->
+            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_MmYeqM5XRzqQn2" async> </script> </form>
         </div>
+        <!-- Add other plans as needed -->
+    </div>
+    <div class="container">
+        <h1>Choose a Plan</h1>
         <div class="plan">
             <h2>Premium Plan - $5</h2>
-            <p>Customize Word File and PDF</p>
-            <button onclick="purchase('Premium')">Buy Now</button>
+            <p>JavaScript Sessional - Both PDF and Word File</p>
+            <!-- Razorpay Payment Button -->
+            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_MmYgxGBgIylkVU" async> </script> </form>
         </div>
+        <!-- Add other plans as needed -->
     </div>
 
     <script>
         function purchase(plan) {
-            // You can implement payment processing logic here
-            // For demonstration, we'll show an alert with the selected plan
-            alert(`You have selected the ${plan} plan. Payment processing is not implemented in this example.`);
+            alert(`You have selected the ${plan} plan.`);
         }
     </script>
 </body>
