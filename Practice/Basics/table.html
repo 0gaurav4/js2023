@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username="mysgrown">
+    <title>Table</title>
+</head>
+<body>
+    <style>
+        fieldset {
+            width: 300px;
+            height: 350px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+    </style>
+    <center>
+        <form>
+            <fieldset>
+                Choose number for table😃
+                <br>
+                <input type="number" id="num">
+                <br>
+                <button type="button" onclick="displayTable()">Generate Table</button>
+                <div id="output"></div> <!-- This is where the results will be displayed -->
+            </fieldset>
+        </form>
+    </center>
+    <script>
+        function displayTable() {
+            var num = Number(document.getElementById("num").value);
+            var outputElement = document.getElementById("output");
+            outputElement.innerHTML = ""; // Clear previous results
+            for (let i = 1; i <= 10; i++) {
+                outputElement.innerHTML += i * num + "<br> ";
+            }
+        }
+    </script>
+</body>
+</html>
