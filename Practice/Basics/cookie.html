@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username="mysgrown">
+    <title>cookie🍪</title>
+        <style>
+            input {
+                width: max-content;
+                height: 20px;
+                background-color: rgb(255, 255, 255);
+                color: black;
+                border-radius: 10px;
+            }
+            button {
+                width: max-content;
+                height: 50px;
+                background-color: rgb(255, 153, 0);
+                color: white;
+                border-radius: 10px;
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin-top: 10px;
+            }
+        </style>
+        <script>
+            function CookieCreate() {
+                with(document.form1) {
+                    var usernameValue = username.value;
+                    document.cookie = "Username=" + usernameValue; // Set the cookie with the name "Username"
+                    alert("Cookie created successfully");
+                }    }
+            function Readcookie() {
+                var cookies = document.cookie.split(';');
+                var value = "";
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim(); // Remove leading/trailing whitespace
+                    if (cookie.startsWith("Username=")) {
+                        value = cookie.substring("Username=".length);
+                        break;
+                    }   }
+                if (value) {
+                    document.write("<br>Value: " + value);
+                } else {
+                    document.write("<br>Cookie not found");
+                } }
+                function DeleteCookie() {
+                    document.cookie = "Username=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; // Set the expiration date to the past
+                    alert("Cookie deleted successfully");     }
+        </script>
+    </head>
+    <body>
+        <form name="form1">
+            Please enter your username: <input type="text" name="username">
+            <input type="button" value="Set Cookie🍪!" onclick="CookieCreate()">
+            <br>
+            <input type="button" value="Read Cookie🍪!" onclick="Readcookie()">
+            <br>
+            <input type="button" value="Delete Cookie🍪!" onclick="DeleteCookie()">
+        </form>
+    </body>
+    </html>
+    
