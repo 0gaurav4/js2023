@@ -17,3 +17,5 @@
 Practice 
 
 .Ques 1   : https://0gaurav4.github.io/js2023/Practice/Basics/table.html
+.Ques 2   : https://0gaurav4.github.io/js2023/Practice/Basics/cookie.html
+
