@@ -59,17 +59,26 @@
     
     <script>
         function registerUser() {
+            // for accessing values from input id's in html
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
-                       // Simulate user registration and display the result in an alert box
-                       const resultMessage = `
-                       Registration Successful
-                       Username: ${username}
-                       Email: ${email}
-                       Password: ********   `;
-                   alert(resultMessage);    }
+            // for password validation use a constant to check
+            const passwordRegex = /^(?=.*[!@#$%^&*])(.{8,})/;
+            if (!username || !email || !password) {
+                alert('Registration not successful. Please enter your details.');
+            } else if (!password.match(passwordRegex)) {
+                alert('Registration not successful. Password must be at least 8 characters long and contain at least one special symbol.');
+            } else {
+                // Simulate user registration and display the result in an alert box
+                const resultMessage = `
+                    Registration Successful
+                    Username: ${username}
+                    Email: ${email}
+                    Password: ********
+                `;
+                alert(resultMessage);
+            }   }  
         </script>
 </body>
 </html>
