@@ -1,0 +1,13 @@
+<!DOCTYPE html>   <html>  <body>
+    <form id="myForm">
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>  </form>
+    <script>
+        const form = document.getElementById("myForm");
+        const nameInput = document.getElementById("name");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            confirm("Form submitted! Name: " + nameInput.value);   });
+        nameInput.addEventListener("change", function (event) {
+            confirm("Name changed: " + event.target.value);        });   
+        </script>      </body>   </html>
