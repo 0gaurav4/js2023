@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="sidebar">
+        <ul id="menu"></ul>
+      </div>
+      <button id="add-item">Add</button>
+      <button id="remove-item">Remove</button>
+      <script>
+      const menu = document.getElementById("menu");
+      const addItemButton = document.getElementById("add-item");
+      const removeItemButton = document.getElementById("remove-item");
+      const menuItems = [];
+      function addItem() {
+        const newItemText = prompt("Enter new item:");
+        //validation
+        if (!newItemText) return alert("Invalid item name!");
+        if (menuItems.includes(newItemText)) return alert("Item already exists!");
+        const menuItem = document.createElement("li");
+        menuItem.textContent = newItemText;
+        menuItem.addEventListener("click", () => alert(`Clicked on ${newItemText}`));
+        menu.appendChild(menuItem);
+        menuItems.push(newItemText);   }
+      function removeItem() {
+        const itemToRemove = prompt("Enter item to remove:");
+        //validation
+        if (!itemToRemove) return alert("Invalid item name!");
+        const index = menuItems.indexOf(itemToRemove);
+        if (index === -1) return alert("Item doesn't exist!");
+        menuItems.splice(index, 1);
+        menu.removeChild(menu.children[index]);   }
+      addItemButton.addEventListener("click", addItem);
+      removeItemButton.addEventListener("click", removeItem);
+      </script>   </body>  </html>

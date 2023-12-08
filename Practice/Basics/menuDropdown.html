@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <select id="dropdown">
+    </select>
+  <label for="input">Input:</label>
+  <input type="text" id="input" placeholder="Enter a new option">
+  <button id="addBtn">Add</button>
+
+<script>
+const dropdown = document.getElementById("dropdown");
+const input = document.getElementById("input");
+const addBtn = document.getElementById("addBtn");
+const menuItems = ["Option 1", "Option 2", "Option 3"];
+
+// Load initial menu items
+function populateMenu() {
+  dropdown.innerHTML = ""; // Clear existing options
+  for (const item of menuItems) {
+    const option = document.createElement("option");
+    option.value = item;
+    option.textContent = item;
+    dropdown.appendChild(option);  }}
+populateMenu();
+// Add new item to menu
+addBtn.addEventListener("click", function () {
+  const newItem = input.value.trim();
+  if (!newItem) {
+    alert("Please enter a valid option!");
+    return;  }
+  // Validate if item already exists
+  if (menuItems.includes(newItem)) {
+    alert("Option already exists!");
+    return;  }
+  menuItems.push(newItem);
+  populateMenu();
+  input.value = "";  });
+</script>   </body>  </html>
