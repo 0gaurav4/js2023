@@ -1,0 +1,10 @@
+<html> <head>
+  <title>Factorial Calculation</title> <script>
+    function calculateFactorial() {
+      var number = parseInt(prompt("Enter a number:"));
+      var factorial = 1;
+      for (var i = 1; i <= number; i++) {
+        factorial *= i;   }
+  alert("The factorial of " + number + " is: " + factorial);  }
+  </script> </head> <body>
+  <button onclick="calculateFactorial()">Calculate Factorial</button> </body> </html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Armstrong String Checker</title>
+    <script>
+        function checkArmstrong() {
+            var string = document.getElementById("string").value;
+            var sum = 0;
+            for (var i = 0; i < string.length; i++) {
+                var charCode = string.charCodeAt(i);
+                sum += charCode ** 3;     }
+            var result = document.getElementById("result");
+            if (sum == string.length) {
+                result.innerHTML = string + " is an Armstrong string.";
+            } else {
+                result.innerHTML = string + " is not an Armstrong string."; } }
+    </script>
+</head>
+<body>
+    <h1>Armstrong String Checker</h1>
+    <form>
+        <label for="string">Enter a string:</label>
+        <input type="text" id="string" name="string">
+        <button type="button" onclick="checkArmstrong()">Check</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>

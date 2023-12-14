@@ -1,0 +1,15 @@
+<html> <head>
+  <title>Palindrome Checker</title> <script>
+    function checkPalindrome() {
+      var word = document.getElementById("word").value;
+      var reversedWord = word.split("").reverse().join("");
+      if (word === reversedWord) {
+        document.getElementById("result").innerHTML = "The word is a palindrome!";
+      } else {
+        document.getElementById("result").innerHTML = "The word is not a palindrome.";   } }
+  </script>  </head>  <body>
+  <h1>Palindrome Checker</h1>  <form>
+    <label for="word">Enter a word:</label>
+    <input type="text" id="word" name="word">
+    <button type="button" onclick="checkPalindrome()">Check</button>
+  </form>  <p id="result"></p>  </body>  </html>
